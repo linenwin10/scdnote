@@ -1,0 +1,947 @@
+    .book {
+  --text-color: #c8c2b8;
+  max-width: 36em;
+  margin: 0 auto;
+}
+
+.book p {
+  color: var(--text-color);
+}
+    
+    p.subheading {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+    .full-page-break {
+  height: 100vh;
+}
+    .image-row {
+  margin: 2rem 0 0.5rem;
+}
+
+.image-row .images {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+}
+
+.image-row .images img {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+.image-row .images img.crop-top {
+  object-position: top;
+}
+.image-row .images img.crop-bottom {
+  object-position: center 80%;
+}
+
+.image-row .images img.bottom2 {
+  object-position: center 100%;
+}
+.image-row .images img.hori {
+  object-position: 25% 0%;
+}
+.image-row .images img.chopped {
+  object-position: 80% 0%;
+}
+
+.image-row .images img.wide {
+  flex: 1.5;
+  aspect-ratio: auto;
+  object-fit: cover;
+  object-position: top;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted-color);
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+}
+figcaption2 {
+  text-align: left;
+  font-style: italic;
+  color: var(--muted-color);
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+}
+    @font-face {
+  font-family: 'iA Writer Quattro';
+  src: url('fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro';
+  src: url('fonts/iAWriterQuattroS-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro';
+  src: url('fonts/iAWriterQuattroS-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'iA Writer Quattro';
+  src: url('fonts/iAWriterQuattroS-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+    #theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--border-color);
+}
+:root {
+  --bg-color: #111113;       /* near-black neutral */
+  --surface-color: #111214;   /* subtle raised area */
+  --soft-bg-color: #020203;   /* optional secondary */
+
+  --text-color: #a8a8aa; /* softened but readable */
+  --muted-color: #5a5d63;     /* secondary/meta */
+  --faint-color: #3d4045;     /* timestamps/low-priority */
+
+  --border-color: #1c1f25;
+  --selection-color: #2a2d32;
+}
+
+    html {
+  color: var(--text-color);
+  background-color: var(--bg-color);
+    }
+    body {
+              font-family: 'EB Garamond', Georgia, serif;
+      margin: 0 auto;
+
+      padding-top: 100px;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+    h1 {
+font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: 3.5rem;
+  line-height: 1;
+   margin-bottom: 1rem;
+
+}
+    @media (max-width: 600px) {
+      body {
+        padding: 24px;
+        font-size: 1.15rem;
+        padding-top: 40px;
+      }
+      h1 {
+        font-size: 2.5rem;
+      }
+      .image-row {
+    flex-direction: column;
+  }
+  .image-row img {
+    aspect-ratio: auto;
+    width: 100%;
+  }
+  #TOC > ul > li > a {
+    font-size: 0.95rem;
+    letter-spacing: 0.25em;
+  }
+
+  #TOC > ul > li > ul > li > a {
+    font-size: 1.3rem;
+  }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        font-family: 'Newsreader', Georgia, serif;
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 0.5em 0;
+    }
+    a {
+  color: var(--text-color);
+  text-decoration: underline;
+  text-decoration-color: var(--muted-color);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+    }
+    a:hover {
+  text-decoration-color: var(--text-color);
+}
+    a:visited {
+  color: var(--link-color);
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+  border-left: 2px solid var(--border-color);
+  color: var(--muted-color);
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+        border-top: 1px solid var(--text-color);
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+  border-top: 1px solid var(--text-color);
+  border-bottom: 1px solid var(--text-color);
+    }
+    th {
+  border-top: 1px solid var(--text-color);
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+
+
+.countdown {
+  margin: 10rem -2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: calc(100% + 4rem);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem 0.5rem;
+  border-right: 1px solid var(--border-color);
+}
+
+.countdown-unit:last-child {
+  border-right: none;
+}
+
+.countdown-label {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--muted-color);
+  margin-bottom: 1.5rem;
+}
+
+.countdown-number {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  color: var(--text-color);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown.finished .countdown-number {
+  color: var(--muted-color);
+}
+
+.countdown-message {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+  text-align: center;
+  color: var(--text-color);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .countdown {
+    margin: 6rem 0;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .countdown-unit {
+    padding: 1.5rem 0.5rem;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+  }
+  .countdown-unit:nth-child(2),
+  .countdown-unit:last-child {
+    border-right: none;
+  }
+  .countdown-unit:nth-child(3),
+  .countdown-unit:last-child {
+    border-bottom: none;
+  }
+  .countdown-number {
+    font-size: 3.5rem;
+  }
+  .countdown-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+  .countdown-message {
+    font-size: 2.5rem;
+    margin: 6rem 0;
+  }
+}
+/* ============================================
+   THE PROPHECY — illuminated manuscript section
+   ============================================ */
+
+/* The whole section gets its own environment.
+   Generous breathing room above and below sets it apart. */
+.prophecy {
+  margin: 8rem -2rem;
+  padding: 4rem 2rem;
+  background-color: #08090b;/* very subtly darker than the page background */
+  text-align: center;
+}
+
+/* Heading: "THE PROPHECY" in Cinzel — Roman stone inscription feel.
+   Uppercase, wide tracking, gold, monumental. */
+.prophecy-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 3.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #c9a961; /* antique gold — muted, manuscript-coded */
+  margin: 0 0 2rem 0;
+  /* the letter-spacing makes the right side feel off-center; nudge back: */
+  padding-left: 0.3em;
+  margin-bottom: 2.5rem;
+}
+
+.prophecy-divider {
+  color: #c9a961;
+  font-size: 1.2rem;
+  letter-spacing: 1em;
+  text-align: center;
+  margin: 3rem 0;
+  padding-left: 1em;
+  opacity: 0.7;
+}
+
+/* Horizontal rules above and below — thin gold lines framing the section.
+   These are the "illuminated frame" of the prophecy. */
+.prophecy-rule {
+  width: 60%;
+  max-width: 300px;
+  height: 1px;
+  background-color: #c9a961;
+  opacity: 0.8;
+  margin: 2rem auto;
+}
+
+/* Verse paragraphs: Cormorant Garamond, italic, larger than body,
+   centered, with generous line-height. Reads like scripture. */
+.prophecy-verse {
+  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  color: #e0d9c8;
+  max-width: 24em;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-wrap: balance;
+}
+
+/* Ornaments between verses — small gold quadrate stars.
+   Generous vertical margin so each verse has room to breathe. */
+.prophecy-ornament {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #c9a961;
+  opacity: 0.7;
+  margin: 2.5rem 0;
+  letter-spacing: 0.5em;
+  padding-left: 0.5em;
+}
+
+/* Drop cap on the first letter of the first verse.
+   Large, gold, with Cinzel for grandeur. The R of "Rosario". */
+.dropcap {
+font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 3.8em;
+  float: left;
+  line-height: 0.8;
+  margin: 0.05em 0.1em -0.1em 0;
+  color: #c9a961;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .prophecy {
+    margin: 5rem 0;
+    padding: 3rem 1rem;
+  }
+
+  .prophecy-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.2em;
+  }
+
+  .prophecy-verse {
+    font-size: 1.5rem;
+    line-height: 1.55;
+  }
+
+  .prophecy-rule {
+    width: 70%;
+  }
+
+  .prophecy-ornament {
+    margin: 2rem 0;
+  }
+
+  .dropcap {
+    font-size: 3em;
+  }
+}
+
+.elaboration .declarative {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 2.5rem 0;
+  font-style: italic;
+}
+
+.elaboration .pronouncement {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.7rem;
+  text-align: center;
+color: #e0d9c8;
+  margin: 4rem 0;
+  font-weight: 800;
+}
+
+.elaboration-image {
+  margin: 3rem 0;
+}
+
+.elaboration-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.elaboration .pivot {
+  font-style: italic;
+  color: var(--text-color);
+  margin: 3rem 0;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+h1#table-of-contents {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: -0.02em;
+  text-align: left;
+  margin-bottom: 3rem;
+  color: #c8c2b8;
+}
+
+/* TOC heading */
+#TOC,
+nav[role="doc-toc"] {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/* Reset Pandoc's default list styling */
+#TOC ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* TOP LEVEL — Parts (I, II, III...) */
+#TOC > ul > li {
+  margin-top: 3rem;
+}
+
+#TOC > ul > li:first-child {
+  margin-top: 0;
+}
+
+#TOC > ul > li > a {
+    font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #c8c2b8;
+  display: block;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 1.75rem;
+}
+
+/* MIDDLE LEVEL — Chapters (now secondary, organizing the sub-chapters) */
+#TOC > ul > li > ul > li > a {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.5rem;
+  color: #c8c2b8;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* BOTTOM LEVEL — Sub-chapters (now PRIMARY content) */
+#TOC > ul > li > ul > li > ul {
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#TOC > ul > li > ul > li > ul > li {
+  margin: 0.6rem 0;
+}
+
+#TOC > ul > li > ul > li > ul > li > a {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 1.1rem;
+  color: #c8c2b8;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.part-divider {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #c9a961;
+}
+
+.part-divider .part-word {
+  display: block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600;
+color: #c9a961;
+  font-size: 5rem;
+  letter-spacing: 0.02em;
+
+  margin: 0 0 1rem 0 !important;
+  line-height: 1;
+}
+
+
+
+.part-divider .part-numeral {
+  display: block;
+  font-family: 'Newsreader', Georgia, serif;
+  font-weight: 600;
+color: #c9a961;
+  font-size: 5rem !important;
+  letter-spacing: 0.02em;
+
+  margin: 0 !important;
+  line-height: 1;
+}
+
+.note {
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.elaboration {
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.book {
+  --text-color: #c8c2b8;
+  max-width: 36em;
+  margin: 0 auto;
+  font-family: 'Newsreader', Georgia, serif;
+}
+
+.part-divider {
+  max-width: none;
+  /* already centered via flex */
+}
+
+.toc-wrapper {
+  max-width: 30em;
+  margin: 0 auto;
+}
+
+.book h2 {
+  font-family: 'Newsreader', 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: #e8dfd0;
+  margin-top: 7rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.book h3 {
+  font-family: 'Newsreader', 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #e8dfd0;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 600px) {
+  .book h2 {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+  }
+  .book h3 {
+    font-size: 1.3rem;
+    margin-top: 2.5rem;
+  }
+}
+
+.book p {
+  margin: 1em 0;
+  color: var(--text-color);
+}
+
+.book {
+  font-size: 1.3rem;
+  line-height: 1.7;
+}
+
+.book h2 + p,
+   .book h3 + p {
+     margin-top: 0;
+   }
+.book img.img-large {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+}
+
+.book img.img-small {
+  max-width: 250px;
+      margin: 2rem auto;
+  display: block;
+}
+
+.book img.img-medium {
+  max-width: 450px;
+    margin: 2rem auto;
+  display: block;
+}
+.book img.img-small-float {
+  max-width: 200px;
+  float: right;
+  margin: 0.5rem 0 1rem 1.5rem;
+}
+
+.image-pair {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-pair img {
+  height: 300px;
+  max-height: 350px;
+  max-width: calc(50% - 0.5rem);
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0;
+  display: block;
+  max-width: 22em;
+}
+
+
+
+@media (max-width: 600px) {
+  .image-pair {
+    flex-direction: column;
+  }
+  .image-pair img {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.book .matrix {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2.5rem 0;
+  font-family: 'Newsreader', 'EB Garamond', Georgia, serif;
+  font-size: 1.05rem;
+}
+
+.book .matrix th,
+.book .matrix td {
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border-color);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.book .matrix thead th {
+  font-weight: 600;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+.book .matrix tbody th {
+  font-weight: 600;
+  color: var(--text-color);
+  text-align: left;
+  font-style: italic;
+}
+
+.book .matrix td {
+  color: var(--text-color);
+}
+
+.book .matrix .highlight {
+  color: #e8dfd0;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .book .matrix {
+    font-size: 0.9rem;
+  }
+  .book .matrix th,
+  .book .matrix td {
+    padding: 0.6rem 0.5rem;
+  }
+}
+.image-trio {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.image-trio img {
+  width: calc((100% - 2rem) / 3);
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .image-trio {
+    flex-direction: column;
+  }
+  .image-trio img {
+    width: 100%;
+  }
+}
+
+.centered-block {
+  text-align: center;
+}
+
+.centered-block p {
+  font-style: italic;
+}
+
+.personal-return {
+  font-family: 'EB Garamond', Georgia, serif;
+  max-width: 30em;
+  margin: 0 auto;
+   font-size: 1.25rem;
+  line-height: 1.5;
+  color: #a8a8aa;
+}
+
+.personal-return p {
+  font-family: 'EB Garamond', Georgia, serif;
+   margin: 0.5em 0;
+  color: #a8a8aa;
+}
+
+.personal-return h2 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: #a8a8aa;
+  margin-top: 7rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.personal-return h3 {
+  font-family: 'EB Garamond', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #a8a8aa;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.dedication {
+  text-align: center;
+  font-style: italic;
+  color: var(--muted-color);
+  font-size: 1.3rem;
+  max-width: 28em;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
