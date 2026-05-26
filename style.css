@@ -81,37 +81,7 @@ figcaption2 {
   font-size: 0.9em;
   margin-top: 0.5rem;
 }
-    @font-face {
-  font-family: 'iA Writer Quattro';
-  src: url('fonts/iAWriterQuattroS-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'iA Writer Quattro';
-  src: url('fonts/iAWriterQuattroS-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'iA Writer Quattro';
-  src: url('fonts/iAWriterQuattroS-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'iA Writer Quattro';
-  src: url('fonts/iAWriterQuattroS-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
-}
     #theme-toggle {
   position: fixed;
   top: 1rem;
@@ -445,12 +415,12 @@ font-family: 'Inter', system-ui, sans-serif;
   text-align: center;
 }
 
-/* Heading: "THE PROPHECY" in Cinzel — Roman stone inscription feel.
-   Uppercase, wide tracking, gold, monumental. */
+
+
 .prophecy-title {
-  font-family: 'Cinzel', serif;
+  font-family: 'Georgia', serif;
   font-weight: 700;
-  font-size: 3.8rem;
+  font-size: 3.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: #c9a961; /* antique gold — muted, manuscript-coded */
@@ -481,10 +451,10 @@ font-family: 'Inter', system-ui, sans-serif;
   margin: 2rem auto;
 }
 
-/* Verse paragraphs: Cormorant Garamond, italic, larger than body,
+/* Verse paragraphs: Garamond, italic, larger than body,
    centered, with generous line-height. Reads like scripture. */
 .prophecy-verse {
-  font-family: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  font-family: 'EB Garamond', Times, serif, serif;
   font-style: italic;
   font-size: 1.5rem;
   line-height: 1.6;
@@ -498,7 +468,7 @@ font-family: 'Inter', system-ui, sans-serif;
 /* Ornaments between verses — small gold quadrate stars.
    Generous vertical margin so each verse has room to breathe. */
 .prophecy-ornament {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'EB Garamond', serif;
   font-size: 1rem;
   color: #c9a961;
   opacity: 0.7;
@@ -507,17 +477,7 @@ font-family: 'Inter', system-ui, sans-serif;
   padding-left: 0.5em;
 }
 
-/* Drop cap on the first letter of the first verse.
-   Large, gold, with Cinzel for grandeur. The R of "Rosario". */
-.dropcap {
-font-family: 'Cinzel', serif;
-  font-weight: 600;
-  font-size: 3.8em;
-  float: left;
-  line-height: 0.8;
-  margin: 0.05em 0.1em -0.1em 0;
-  color: #c9a961;
-}
+
 
 /* Mobile adjustments */
 @media (max-width: 600px) {
@@ -557,7 +517,7 @@ font-family: 'Cinzel', serif;
 }
 
 .elaboration .pronouncement {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'EB Garamond', serif;
   font-style: italic;
   font-size: 1.7rem;
   text-align: center;
