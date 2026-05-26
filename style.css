@@ -989,6 +989,10 @@ flex: 1;
 }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ============================================
    LIGHTBOX — tap any image to enlarge
    ============================================ */
