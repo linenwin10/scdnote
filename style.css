@@ -1,4 +1,9 @@
-    .book {
+   html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+   
+   .book {
   --text-color: #c8c2b8;
   max-width: 36em;
   margin: 0 auto;
@@ -25,7 +30,7 @@
 
 .image-row .images {
   display: flex;
-  gap: 0.75rem;
+  gap: 0.25rem;
   align-items: stretch;
 }
 
@@ -522,12 +527,12 @@ font-family: 'Cinzel', serif;
   }
 
   .prophecy-title {
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     letter-spacing: 0.2em;
   }
 
   .prophecy-verse {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     line-height: 1.55;
   }
 
@@ -811,12 +816,41 @@ color: #c9a961;
 
 @media (max-width: 600px) {
   .image-pair {
-    flex-direction: column;
+ flex-direction: row;
+    gap: 0.25rem;
+    align-items: stretch;
   }
   .image-pair img {
+flex: 1;
+    width: 0;
+    min-width: 0;
+    max-width: none;
     height: auto;
-    width: 100%;
+    object-fit: cover;
   }
+  .image-trio {
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+    .image-trio img {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    height: auto;
+    object-fit: cover;
+  }
+  .book img.img-small {
+    max-width: 100%;
+    width: 100%;
+    max-height: 40vh;
+  }
+    .book img.img-medium {
+    max-width: 100%;
+    max-height: 30vh;   /* 70% of the viewport height — adjust to taste */
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    
 }
 
 .book .matrix {
@@ -881,14 +915,7 @@ color: #c9a961;
   display: block;
 }
 
-@media (max-width: 600px) {
-  .image-trio {
-    flex-direction: column;
-  }
-  .image-trio img {
-    width: 100%;
-  }
-}
+
 
 .centered-block {
   text-align: center;
@@ -945,3 +972,70 @@ color: #c9a961;
   line-height: 1.5;
 }
 
+@media (max-width: 600px) {
+  .image-trio {
+    flex-direction: column;
+  }
+  .image-trio img {
+    width: 100%;
+  }
+    .personal-return {
+    font-size: 1.15rem;
+  }
+  .dedication {
+
+  font-size: 1.2rem;
+
+}
+}
+
+/* ============================================
+   LIGHTBOX — tap any image to enlarge
+   ============================================ */
+
+img:not(.no-lightbox) {
+  cursor: zoom-in;
+  transition: opacity 0.15s ease;
+}
+
+img:not(.no-lightbox):active {
+  opacity: 0.7;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  cursor: zoom-out;
+  padding: 1rem;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transform: scale(0.96);
+  transition: transform 0.2s ease;
+}
+
+.lightbox.open img {
+  transform: scale(1);
+}
+
+body.lightbox-open {
+  overflow: hidden;
+}
