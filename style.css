@@ -262,7 +262,7 @@ font-family: 'Inter', system-ui, sans-serif;
 
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
     @media (max-width: 600px) {
       body {
@@ -1074,6 +1074,7 @@ section.personal-return p {
     .personal-return {
     font-size: 1.15rem;
     max-width: 100%;
+    line-height: 1.4;
   }
   .dedication {
     max-width: 100%;
