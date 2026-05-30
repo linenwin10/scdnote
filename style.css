@@ -133,7 +133,7 @@
   margin-bottom: 1rem;
 }
     .full-page-break {
-  height: 100dvh;
+  height: 600px;
 }
     .image-row {
   margin: 2rem 0 0.5rem;
@@ -257,6 +257,10 @@ font-family: 'Inter', system-ui, sans-serif;
   line-height: 1;
    margin-bottom: 1rem;
 
+}
+
+.book h2, .book h3, .part-divider {
+  scroll-margin-top: 2rem;
 }
 
 html {
@@ -739,7 +743,6 @@ nav[role="doc-toc"] {
 }
 
 .part-divider {
-  min-height: 80dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
