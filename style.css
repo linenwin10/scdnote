@@ -133,7 +133,7 @@
   margin-bottom: 1rem;
 }
     .full-page-break {
-  height: 100vh;
+  height: 100dvh;
 }
     .image-row {
   margin: 2rem 0 0.5rem;
@@ -731,7 +731,7 @@ nav[role="doc-toc"] {
 }
 
 .part-divider {
-  min-height: 80vh;
+  min-height: 80dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -916,11 +916,11 @@ flex: 1;
   .book img.img-small {
     max-width: 100%;
     width: 100%;
-    max-height: 40vh;
+    max-height: 40dvh;
   }
     .book img.img-medium {
     max-width: 100%;
-    max-height: 30vh;   /* 70% of the viewport height — adjust to taste */
+    max-height: 30dvh;   /* 70% of the viewport height — adjust to taste */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -1078,7 +1078,7 @@ section.personal-return p {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* ============================================
