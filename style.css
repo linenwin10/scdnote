@@ -79,6 +79,31 @@
   src: url('/fonts/newsreader-v26-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
+.lang-switch {
+  position: absolute;
+  top: 1.5rem;
+  right:1.5rem;          /* sits to the left of your theme toggle */
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--muted-color);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.lang-switch:hover {
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
 
    
    
