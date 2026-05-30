@@ -259,9 +259,7 @@ font-family: 'Inter', system-ui, sans-serif;
 
 }
 
-.book h2, .book h3, .part-divider {
-  scroll-margin-top: 2rem;
-}
+
 
 html {
   scroll-behavior: auto;
@@ -333,9 +331,7 @@ html {
       height: auto;
       max-width: 100%;
     }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
+
     h5, h6 {
       font-size: 1em;
       font-style: italic;
@@ -1044,7 +1040,7 @@ section.personal-return p {
   font-weight: 600;
   font-size: 2.3rem;
   color: #a8a8aa;
-  margin-top: 7rem;
+
   margin-bottom: 1.5rem;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -1080,6 +1076,7 @@ section.personal-return p {
   }
     .personal-return {
     font-size: 1.15rem;
+    max-width: 100%;
   }
   .dedication {
 
