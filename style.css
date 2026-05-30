@@ -1017,10 +1017,7 @@ flex: 1;
   color: #a8a8aa;
   overflow-wrap: break-word;
   word-break: break-word;
-      padding-top: 100px;
-      padding-left: 30px;
-      padding-right: 30px;
-      padding-bottom: 30px;
+
       hyphens: auto;
 
       font-kerning: normal;
@@ -1032,7 +1029,7 @@ section.personal-return p {
   font-family: 'EB Garamond', Georgia, serif;
    margin: 0.5em 0;
   color: #a8a8aa;
-  max-width: 100%;
+
 }
 
 .personal-return h2 {
