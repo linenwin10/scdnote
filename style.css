@@ -242,7 +242,7 @@ figcaption2 {
       padding-bottom: 30px;
       hyphens: auto;
       overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
+
       font-kerning: normal;
       font-size: 1.25rem;
       line-height: 1.5;
@@ -573,7 +573,7 @@ font-family: 'Inter', system-ui, sans-serif;
   max-width: 24em;
   margin: 0 auto;
   padding: 0 1rem;
-  text-wrap: balance;
+ 
 }
 
 /* Ornaments between verses — small gold quadrate stars.
@@ -1015,7 +1015,7 @@ flex: 1;
       padding-right: 30px;
       padding-bottom: 30px;
       hyphens: auto;
-      text-rendering: optimizeLegibility;
+
       font-kerning: normal;
       font-size: 1.25rem;
 
