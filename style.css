@@ -330,12 +330,23 @@ html {
     page-break-after: always;
     break-after: page;
   }
-
+.part-divider {
+    page-break-before: always;
+    break-before: page;
+    min-height: auto;
+  }
   .download-btn,
   .lang-switch,
   .countdown,
   #theme-toggle {
     display: none;
+  }
+.countdown,
+  .countdown-unit,
+  .countdown-label,
+  .countdown-number,
+  .countdown-message {
+    display: none !important;
   }
 }
     
