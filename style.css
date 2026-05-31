@@ -307,7 +307,38 @@ html {
       h2, h3, h4 {
         page-break-after: avoid;
       }
-    }
+      .image-row,
+  .image-pair,
+  .image-trio,
+  .elaboration-image,
+  figure,
+  img {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  figcaption {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+  h2 {
+    page-break-before: always;
+    break-before: page;
+  }
+  .full-page-break {
+    height: 0;                    /* don't waste paper on empty space */
+    page-break-after: always;
+    break-after: page;
+  }
+
+  .download-btn,
+  .lang-switch,
+  .countdown,
+  #theme-toggle {
+    display: none;
+  }
+}
+    
     p {
       margin: 0.5em 0;
     }
