@@ -331,9 +331,14 @@ html {
     break-after: page;
   }
 .part-divider {
+
     page-break-before: always;
     break-before: page;
-    min-height: auto;
+    min-height: 100vh;          /* full printed page height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .download-btn,
   .lang-switch,
@@ -347,6 +352,15 @@ html {
   .countdown-number,
   .countdown-message {
     display: none !important;
+  }
+  .dedication {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    page-break-before: always;
+    break-before: page;
   }
 }
     
