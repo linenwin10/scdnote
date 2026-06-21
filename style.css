@@ -1165,7 +1165,7 @@ section.personal-return p {
 .dedication {
   text-align: center;
   font-style: italic;
-  color: var(--muted-color);
+  color: #a8a8aa;
   font-size: 1.3rem;
   max-width: 28em;
   margin-left: auto;
