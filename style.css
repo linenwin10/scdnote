@@ -105,6 +105,31 @@
   border-color: var(--text-color);
 }
 
+.note-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted-color);
+  border: none;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.social-link:hover {
+  color: var(--text-color);
+}
+
+/* keep it visible but unobtrusive on print */
+@media print {
+  .social-link { color: #555; }
+}
+
    
    
    html, body {
